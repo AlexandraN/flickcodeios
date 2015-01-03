@@ -3,7 +3,7 @@
 //  Custom Keyboard Learn
 //
 //  Created by Alexandra Niculai on 06/03/13.
-//  Copyright (c) 2013 fandaliu. All rights reserved.
+//
 //
 
 #import "SelectedPeopleViewController.h"
@@ -27,10 +27,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
-    
+
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     //    self.navigationItem.rightBarButtonItem = self.editButtonItem;
     UIBarButtonItem *addPeopleButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(goToPeopleSearchScreen)];
@@ -71,9 +71,9 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
-    
+
     // Configure the cell...
-    
+
     return cell;
 }
 

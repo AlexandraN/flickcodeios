@@ -3,7 +3,7 @@
 //  Custom Keyboard Learn
 //
 //  Created by Alexandra Niculai on 02/11/12.
-//  Copyright (c) 2012 fandaliu. All rights reserved.
+//
 //
 
 #import <Foundation/Foundation.h>

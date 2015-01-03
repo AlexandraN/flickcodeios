@@ -65,7 +65,7 @@
  @brief Return the object represented by the given NSData object.
 
  The data *must* be UTF8 encoded.
- 
+
  @param data An NSData containing UTF8 encoded data to parse.
  @return The NSArray or NSDictionary represented by the object, or nil if an error occured.
 
@@ -97,5 +97,3 @@
                  error:(NSError**)error;
 
 @end
-
-

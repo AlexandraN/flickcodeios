@@ -15,12 +15,12 @@ two touch long tap (or magic tap)
 - the copy, past, cut will be available on long press (or magic gesture or something) on the text
 - the settings screen (toggle beginner mode, language)
 - remember the website.
-- the next screens have one or more text fields, depending on the selected option. For e-mail 
+- the next screens have one or more text fields, depending on the selected option. For e-mail
 we'll need: destination (more people), subject, content
 - give a little bit for free: "create text" and "call" options. And add the rest as in-app purchases.
 
 More thinking:
-- our users are blind or poorly sighted, so putting everything on the same screen (for example when it comes to 
+- our users are blind or poorly sighted, so putting everything on the same screen (for example when it comes to
 sms or e-mail creation) is a bad idea. A better idea would be to make separate screens for all types of input.
 For the sms creation, i.e., we could create a screen for the text of the sms and a table screen for the destinations.
 It could be a normal, standard editable table.

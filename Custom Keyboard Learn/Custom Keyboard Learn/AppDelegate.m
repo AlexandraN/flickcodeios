@@ -3,7 +3,7 @@
 //  Custom Keyboard Learn
 //
 //  Created by Alexandra Niculai on 19/10/12.
-//  Copyright (c) 2012 fandaliu. All rights reserved.
+//
 //
 
 #import "AppDelegate.h"
@@ -14,13 +14,13 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    
+
     // Override point for customization after application launch.
     OptionsViewController *optionsViewController = [[OptionsViewController alloc] initWithNibName:@"OptionsViewController" bundle:nil];
     optionsViewController.navigationItem.title = @"Options";
-    
+
     self.viewController = [[UINavigationController alloc] initWithRootViewController:optionsViewController];
-    
+
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
     return YES;
@@ -34,7 +34,7 @@
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
+    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
 }
 
