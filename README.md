@@ -1,8 +1,9 @@
 flickcodeios
 ============
 
-Flick Code iOS (Custom Keyboard for iOS)
-It uses a special alphabet, made of swipes. It is destined to blind people and to people who want to type while driving.
+Flick Code iOS (Custom Keyboard for iOS).
+Uses a special alphabet, made of swipes. 
+Destined for blind people and drivers who want to text while keeping the eyes on the road.
 
 I filed three feature requests to Apple, https://bugreport.apple.com.
 Continuing the project is possible.
