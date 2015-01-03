@@ -30,4 +30,4 @@ More thinking:
 For the sms creation, i.e., we could create a screen for the text of the sms and a table screen for the destinations.
 It could be a normal, standard editable table.
 
-The alphabet is in the file code.json
+The alphabet is in the file flickcodeios/Custom Keyboard Learn/Custom Keyboard Learn/code.json
