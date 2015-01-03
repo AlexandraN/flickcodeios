@@ -34,6 +34,7 @@
 -(void)loadFlicks {
 
     SBJsonParser *parser = [[SBJsonParser alloc] init];
+    // Fix this!!! The location of the file code.json has changed
     NSString *flickCodeFilePath = [[NSBundle mainBundle] pathForResource:@"code" ofType:@"json"];
     NSString *flickCodeString = [NSString stringWithContentsOfFile:flickCodeFilePath encoding:NSUTF8StringEncoding error:nil];
 
