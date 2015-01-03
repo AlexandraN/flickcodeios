@@ -3,7 +3,7 @@
 //  Custom Keyboard Learn
 //
 //  Created by Alexandra Niculai on 12/12/12.
-//  Copyright (c) 2012 fandaliu. All rights reserved.
+//
 //
 
 #import "OptionsViewController.h"
@@ -30,10 +30,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+
     // Uncomment the following line to preserve selection between presentations.
     //    self.clearsSelectionOnViewWillAppear = NO;
-    
+
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
@@ -69,12 +69,12 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
-    
+
     // Configure the cell...
-    
+
     NSString *cellText =  @"Just Text";
     int row = indexPath.row;
-    
+
     if ([MFMessageComposeViewController canSendText]) {
         switch (row) {
             case 0: {
@@ -98,10 +98,10 @@
                 break;
         }
     }
-    
-    
+
+
     cell.textLabel.text = cellText;
-    
+
     return cell;
 }
 
@@ -173,7 +173,7 @@
                 break;
         }
     }
-    
+
 }
 
 - (void) pushCreateSmsOption {

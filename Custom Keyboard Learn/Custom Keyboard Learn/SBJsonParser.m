@@ -1,20 +1,20 @@
 /*
  Copyright (C) 2009,2010 Stig Brautaset. All rights reserved.
- 
+
  Redistribution and use in source and binary forms, with or without
  modification, are permitted provided that the following conditions are met:
- 
+
  * Redistributions of source code must retain the above copyright notice, this
    list of conditions and the following disclaimer.
- 
+
  * Redistributions in binary form must reproduce the above copyright notice,
    this list of conditions and the following disclaimer in the documentation
    and/or other materials provided with the distribution.
- 
+
  * Neither the name of the author nor the names of its contributors may be used
    to endorse or promote products derived from this software without specific
    prior written permission.
- 
+
  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
@@ -55,19 +55,19 @@
     }
 
 	SBJsonStreamParserAccumulator *accumulator = [[SBJsonStreamParserAccumulator alloc] init];
-    
+
     SBJsonStreamParserAdapter *adapter = [[SBJsonStreamParserAdapter alloc] init];
     adapter.delegate = accumulator;
-	
+
 	SBJsonStreamParser *parser = [[SBJsonStreamParser alloc] init];
 	parser.maxDepth = self.maxDepth;
 	parser.delegate = adapter;
-	
+
 	switch ([parser parse:data]) {
 		case SBJsonStreamParserComplete:
             return accumulator.value;
 			break;
-			
+
 		case SBJsonStreamParserWaitingForData:
 		    self.error = @"Unexpected end of input";
 			break;
@@ -76,7 +76,7 @@
 		    self.error = parser.error;
 			break;
 	}
-	
+
 	return nil;
 }
 
@@ -88,12 +88,12 @@
 	id tmp = [self objectWithString:repr];
     if (tmp)
         return tmp;
-    
+
     if (error_) {
 		NSDictionary *ui = [NSDictionary dictionaryWithObjectsAndKeys:error, NSLocalizedDescriptionKey, nil];
         *error_ = [NSError errorWithDomain:@"org.brautaset.SBJsonParser.ErrorDomain" code:0 userInfo:ui];
 	}
-	
+
     return nil;
 }
 

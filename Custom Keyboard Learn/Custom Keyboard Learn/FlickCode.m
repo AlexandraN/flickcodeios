@@ -3,7 +3,7 @@
 //  Custom Keyboard Learn
 //
 //  Created by Alexandra Niculai on 02/11/12.
-//  Copyright (c) 2012 fandaliu. All rights reserved.
+//
 //
 
 #import "FlickCode.h"
@@ -32,25 +32,25 @@
 }
 
 -(void)loadFlicks {
-    
+
     SBJsonParser *parser = [[SBJsonParser alloc] init];
     NSString *flickCodeFilePath = [[NSBundle mainBundle] pathForResource:@"code" ofType:@"json"];
     NSString *flickCodeString = [NSString stringWithContentsOfFile:flickCodeFilePath encoding:NSUTF8StringEncoding error:nil];
-    
+
     if (flickCodeString) {
         NSDictionary *allFile = [parser objectWithString:flickCodeString];
-        
+
         NSArray *code = [allFile valueForKey:@"code"];
-        
+
         flickDictionary = [NSMutableDictionary dictionary];
         functionsDictionary = [NSMutableDictionary dictionary];
         speachDictionary = [NSMutableDictionary dictionary];
-        
+
         for (NSArray *flickCode in code) {
             int flickCodeCount = [flickCode count];
-            
+
             [self loadSpeachDictionaryFrom:flickCode withFlickCodeCount:flickCodeCount];
-            
+
             if (flickCodeCount >= 4 && [[flickCode objectAtIndex:3] isEqual:@"function"]) {
                 [functionsDictionary setObject:[flickCode objectAtIndex:1] forKey:[flickCode objectAtIndex:0]];
             } else {
@@ -58,32 +58,32 @@
             }
         }
     }
-    
+
 }
 
 -(void)loadSpeachDictionaryFrom:(NSArray *) flickCode withFlickCodeCount: (int) flickCodeCount{
-    
+
     if (flickCodeCount >= 3) {
         NSDictionary *speach = [flickCode objectAtIndex:2];
         NSString *language = [[NSLocale preferredLanguages] objectAtIndex:0];
-                
+
         NSString* stringToBeSpoken = [speach valueForKey:language];
-        
+
         if (!stringToBeSpoken) {
             stringToBeSpoken = [speach valueForKey:@"en"];
         }
-        
+
         [speachDictionary setObject:stringToBeSpoken forKey:[flickCode objectAtIndex:0]];
     }
 }
 
 -(NSString *)getFunction:(NSString *)flickSequence {
-    
+
     return [functionsDictionary valueForKey:flickSequence];
 }
 
 -(NSString *)getCharacter:(NSString *)flickSequence {
-    
+
     return [flickDictionary valueForKey:flickSequence];
 }
 
@@ -96,7 +96,7 @@
  or to a full gesture (three flicks).
  */
 - (NSString *)getCorrespondingStringForFlickSequenceOrFullGesture:(NSString *)flickSequenceOrFullGesture {
-    
+
     NSString *toBeSpoken = [self getStringToBeSpoken:flickSequenceOrFullGesture];
     if (!toBeSpoken || [toBeSpoken length] == 0) {
         toBeSpoken = [self getCharacter:flickSequenceOrFullGesture];
@@ -105,7 +105,7 @@
 }
 
 -(NSArray *)getPossibleNextFunctionsAndCharactersAfterFlickSequence: (NSString *)flickSequence {
-    
+
     NSMutableArray *nextStuff = [NSMutableArray array];
     for (NSString *flick in allFlicks) {
         NSString *nextSequence = [flickSequence stringByAppendingFormat:@"%@", flick];
@@ -114,8 +114,8 @@
             [nextStuff addObject:stringToBeSpoken];
         }
     }
-    
-    
+
+
     return nextStuff;
 }
 
